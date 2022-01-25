@@ -1,7 +1,8 @@
+import Appbar from './components/Appbar'
 
 function App() {
   return (
-    <h1>Hellow World!</h1>
+    <Appbar />
   );
 }
 
