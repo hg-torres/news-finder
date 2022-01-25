@@ -1,8 +1,20 @@
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route
+} from 'react-router-dom'
+import Login from './pages/Auth/Login'
+import SignUp from './pages/Auth/SingUp'
 
-function App() {
+const App = () => {
   return (
-    <h1>Hellow World!</h1>
-  );
+    <Router>
+      <Routes>
+        <Route path='/login' element={<Login />} />
+        <Route path='/sign-up' element={<SignUp />} />
+      </Routes>
+    </Router>
+  )
 }
 
-export default App;
+export default App
