@@ -1,5 +1,5 @@
 {
-  "name": "01-19-22",
+  "name": "news-finder",
   "version": "1.0.0",
   "description": "",
   "main": "server.js",
@@ -14,15 +14,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/QFults/01-19-22.git"
+    "url": "git+https://github.com/hg-torres/news-finder"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/QFults/01-19-22/issues"
+    "url": "https://github.com/hg-torres/issues"
   },
-  "homepage": "https://github.com/QFults/01-19-22#readme",
+  "homepage": "https://github.com/hg-torres/news-finder#readme",
   "dependencies": {
     "concurrently": "^7.0.0",
     "dotenv": "^14.2.0",
