@@ -1,55 +1,88 @@
-import { useState } from 'react'
-import { Form, Label, Input, Button } from 'reactstrap'
-import UserAPI from '../../utils/UserAPI'
+import * as React from 'react';
+import Avatar from '@mui/material/Avatar';
+import Button from '@mui/material/Button';
+import CssBaseline from '@mui/material/CssBaseline';
+import TextField from '@mui/material/TextField';
+import Link from '@mui/material/Link';
+import Grid from '@mui/material/Grid';
+import Box from '@mui/material/Box';
+import PersonOutlineIcon from '@mui/icons-material/PersonOutlined';
+import Typography from '@mui/material/Typography';
+import Container from '@mui/material/Container';
+import { createTheme, ThemeProvider } from '@mui/material/styles';
+
+const theme = createTheme();
 
 const LoginForm = () => {
-  const [loginState, setLoginState] = useState({
-    username: '',
-    password: ''
-  })
-
-  const handleInputChange = ({ target: { name, value } }) => setLoginState({ ...loginState, [name]: value })
-
-  const handleLoginUser = event => {
-    event.preventDefault()
-    UserAPI.login({
-      username: loginState.username,
-      password: loginState.password
-    })
-      .then(token => {
-        localStorage.setItem('user', token)
-        setLoginState({ ...loginState, username: '', password: '' })
-        window.location = '/'
-      })
-  } 
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    const data = new FormData(event.currentTarget);
+    // eslint-disable-next-line no-console
+    console.log({
+      email: data.get('email'),
+      password: data.get('password'),
+    });
+  };
 
   return (
-    <Form>
-      <div className="mb-3">
-        <Label htmlFor="username">Username</Label>
-        <Input
-          type="text"
-          className="form-control"
-          name="username"
-          value={loginState.username}
-          onChange={handleInputChange} />
-      </div>
-      <div className="mb-3">
-        <Label htmlFor="password">Password</Label>
-        <Input
-          type="password"
-          className="form-control"
-          name="password"
-          value={loginState.password}
-          onChange={handleInputChange} />
-      </div>
-      <Button
-        color="primary"
-        onClick={handleLoginUser} >
-        Log In
-      </Button>
-    </Form>
-  )
+    <ThemeProvider theme={theme}>
+      <Container component="main" maxWidth="xs">
+        <CssBaseline />
+        <Box
+          sx={{
+            marginTop: 8,
+            display: 'flex',
+            flexDirection: 'column',
+            alignItems: 'center',
+          }}
+        >
+          <Avatar sx={{ m: 1, bgcolor: 'secondary.main' }}>
+            <PersonOutlineIcon />
+          </Avatar>
+          <Typography component="h1" variant="h5">
+            Sign in
+          </Typography>
+          <Box component="form" onSubmit={handleSubmit} noValidate sx={{ mt: 1 }}>
+            <TextField
+              margin="normal"
+              required
+              fullWidth
+              id="email"
+              label="Email Address"
+              name="email"
+              autoComplete="email"
+              autoFocus
+            />
+            <TextField
+              margin="normal"
+              required
+              fullWidth
+              name="password"
+              label="Password"
+              type="password"
+              id="password"
+              autoComplete="current-password"
+            />
+            <Button
+              type="submit"
+              fullWidth
+              variant="contained"
+              sx={{ mt: 3, mb: 2 }}
+            >
+              Sign In
+            </Button>
+            <Grid container justifyContent="flex-end">
+              <Grid item>
+                <Link href="/sign-up" variant="body2">
+                  {"Don't have an account? Sign Up"}
+                </Link>
+              </Grid>
+            </Grid>
+          </Box>
+        </Box>
+      </Container>
+    </ThemeProvider>
+  );
 }
 
 export default LoginForm

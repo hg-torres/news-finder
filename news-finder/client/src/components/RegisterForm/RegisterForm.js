@@ -1,76 +1,115 @@
-import { useState } from 'react'
-import { Form, Label, Input, Button } from 'reactstrap'
-import UserAPI from '../../utils/UserAPI'
+import * as React from 'react';
+import Avatar from '@mui/material/Avatar';
+import Button from '@mui/material/Button';
+import CssBaseline from '@mui/material/CssBaseline';
+import TextField from '@mui/material/TextField';
+import Link from '@mui/material/Link';
+import Grid from '@mui/material/Grid';
+import Box from '@mui/material/Box';
+import PersonAddAltOutlinedIcon from '@mui/icons-material/PersonAddAlt1Outlined';
+import Typography from '@mui/material/Typography';
+import Container from '@mui/material/Container';
+import { createTheme, ThemeProvider } from '@mui/material/styles';
+
+const theme = createTheme();
 
 const RegisterForm = () => {
-  const [registerState, setRegisterState] = useState({
-    name: '',
-    email: '',
-    username: '',
-    password: ''
-  })
-
-  const handleInputChange = ({ target: { name, value } }) => setRegisterState({ ...registerState, [name]: value })
-
-  const handleRegisterUser = event => {
-    event.preventDefault()
-    UserAPI.register({
-      name: registerState.name,
-      email: registerState.email,
-      username: registerState.username,
-      password: registerState.password
-    })
-      .then(() => {
-        alert('User has been created! Please type credentials in to Log In!')
-        setRegisterState({ ...registerState, name: '', email: '', username: '', password: '' })
-      })
-  } 
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    const data = new FormData(event.currentTarget);
+    // eslint-disable-next-line no-console
+    console.log({
+      email: data.get('email'),
+      password: data.get('password'),
+    });
+  };
 
   return (
-    <Form>
-      <div className="mb-3">
-        <Label htmlFor="name">Name</Label>
-        <Input
-          type="text"
-          className="form-control"
-          name="name"
-          value={registerState.name}
-          onChange={handleInputChange} />
-      </div>
-      <div className="mb-3">
-        <Label htmlFor="email">Email</Label>
-        <Input
-          type="email"
-          className="form-control"
-          name="email"
-          value={registerState.email}
-          onChange={handleInputChange} />
-      </div>
-      <div className="mb-3">
-        <Label htmlFor="username">Username</Label>
-        <Input
-          type="text"
-          className="form-control"
-          name="username"
-          value={registerState.username}
-          onChange={handleInputChange} />
-      </div>
-      <div className="mb-3">
-        <Label htmlFor="password">Password</Label>
-        <Input
-          type="password"
-          className="form-control"
-          name="password"
-          value={registerState.password}
-          onChange={handleInputChange} />
-      </div>
-      <Button
-        color="primary"
-        onClick={handleRegisterUser} >
-        Register
-      </Button>
-    </Form>
-  )
+    <ThemeProvider theme={theme}>
+      <Container component="main" maxWidth="xs">
+        <CssBaseline />
+        <Box
+          sx={{
+            marginTop: 8,
+            display: 'flex',
+            flexDirection: 'column',
+            alignItems: 'center',
+          }}
+        >
+          <Avatar sx={{ m: 1, bgcolor: 'secondary.main' }}>
+            <PersonAddAltOutlinedIcon />
+          </Avatar>
+          <Typography component="h1" variant="h5">
+            Sign up
+          </Typography>
+          <Box component="form" noValidate onSubmit={handleSubmit} sx={{ mt: 3 }}>
+            <Grid container spacing={2}>
+              <Grid item xs={12} sm={6}>
+                <TextField
+                  autoComplete="given-name"
+                  name="firstName"
+                  required
+                  fullWidth
+                  id="firstName"
+                  label="First Name"
+                  autoFocus
+                />
+              </Grid>
+              <Grid item xs={12} sm={6}>
+                <TextField
+                  required
+                  fullWidth
+                  id="lastName"
+                  label="Last Name"
+                  name="lastName"
+                  autoComplete="family-name"
+                />
+              </Grid>
+              <Grid item xs={12}>
+                <TextField
+                  required
+                  fullWidth
+                  id="email"
+                  label="Email Address"
+                  name="email"
+                  autoComplete="email"
+                />
+              </Grid>
+              <Grid item xs={12}>
+                <TextField
+                  required
+                  fullWidth
+                  name="password"
+                  label="Password"
+                  type="password"
+                  id="password"
+                  autoComplete="new-password"
+                />
+              </Grid>
+              <Grid item xs={12}>
+          
+              </Grid>
+            </Grid>
+            <Button
+              type="submit"
+              fullWidth
+              variant="contained"
+              sx={{ mt: 3, mb: 2 }}
+            >
+              Sign Up
+            </Button>
+            <Grid container justifyContent="flex-end">
+              <Grid item>
+                <Link href="/login" variant="body2">
+                  Already have an account? Sign in
+                </Link>
+              </Grid>
+            </Grid>
+          </Box>
+        </Box>
+      </Container>
+    </ThemeProvider>
+  );
 }
 
 export default RegisterForm
