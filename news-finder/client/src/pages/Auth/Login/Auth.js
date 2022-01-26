@@ -1,7 +1,7 @@
 import LoginForm from "../../../components/LoginForm"
 import RegisterForm from "../../../components/RegisterForm"
 import Grid from '@mui/material/Grid'
-import Button from '@mui/material/Button'
+import Link from '@mui/material/Link'
 import { useState, useEffect } from 'react'
 
 const Auth = () => {
@@ -19,7 +19,7 @@ const Auth = () => {
       {!hasAccount ? <LoginForm /> : <RegisterForm />}
       <Grid container justifyContent="center">
         <Grid item>
-          <Button onClick={buttonHandler} disableRipple = 'true' >{!hasAccount ? "Don't have an account? Sign Up" : "Already have an account? Sign in"}</Button>
+          <Link component="button" onClick={buttonHandler}>{!hasAccount ? "Don't have an account? Sign Up" : "Already have an account? Sign in"}</Link>
         </Grid>
       </Grid>
     </>
