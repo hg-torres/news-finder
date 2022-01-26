@@ -3,15 +3,13 @@ import {
   Routes,
   Route
 } from 'react-router-dom'
-import Login from './pages/Auth/Login'
-import SignUp from './pages/Auth/SingUp'
+import Auth from './pages/Auth/Login'
 
 const App = () => {
   return (
     <Router>
       <Routes>
-        <Route path='/login' element={<Login />} />
-        <Route path='/sign-up' element={<SignUp />} />
+        <Route path='/login' element={<Auth />} />
       </Routes>
     </Router>
   )
