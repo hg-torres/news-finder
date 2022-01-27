@@ -3,18 +3,13 @@ import {
   Routes,
   Route
 } from 'react-router-dom'
-// import CategoryButtons from './components/CategoryButtons'
-import Login from './pages/Auth/Login'
-import SignUp from './pages/Auth/SignUp'
-import Home from './pages/Home/Home'
+import Auth from './pages/Auth/Login'
 
 const App = () => {
   return (
     <Router>
       <Routes>
-        <Route path='/login' element={<Login />} />
-        <Route path='/sign-up' element={<SignUp />} />
-        <Route path='/home' element={<Home />} />
+        <Route path='/login' element={<Auth />} />
       </Routes>
     </Router>
   )
