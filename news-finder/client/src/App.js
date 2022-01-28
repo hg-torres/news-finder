@@ -11,7 +11,6 @@ const App = () => {
   return (
     <Router>
       <Routes>
-        <Appbar />
         <Route path='/login' element={<Auth />} />
         <Route path='/home' element={<Home />} />
       </Routes>

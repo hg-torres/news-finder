@@ -5,6 +5,8 @@ import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
+import Example from "../../assets/testproject3.jpg"
+
 
 export default function MediaCard() {
   return (
@@ -12,7 +14,7 @@ export default function MediaCard() {
       <CardMedia
         component="img"
         height="140"
-        image="/assets/testproject3"
+        image= {Example}
         alt="newstest"
       />
       <CardContent>
