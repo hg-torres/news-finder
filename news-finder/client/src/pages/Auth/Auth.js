@@ -1,5 +1,5 @@
-import LoginForm from "../../../components/LoginForm"
-import RegisterForm from "../../../components/RegisterForm"
+import LoginForm from "../../components/LoginForm"
+import RegisterForm from "../../components/RegisterForm"8 b
 import Grid from '@mui/material/Grid'
 import Link from '@mui/material/Link'
 import { useState, useEffect } from 'react'
