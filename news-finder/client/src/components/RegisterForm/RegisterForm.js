@@ -9,19 +9,21 @@ import PersonAddAltOutlinedIcon from '@mui/icons-material/PersonAddAlt1Outlined'
 import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
+import UserAPI from '../../utils/UserAPI'
+import AuthContext from '../../utils/AuthContext'
+import { useState, useContext } from 'react'
 
 const theme = createTheme();
 
 const RegisterForm = () => {
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    const data = new FormData(event.currentTarget);
-    // eslint-disable-next-line no-console
-    console.log({
-      email: data.get('email'),
-      password: data.get('password'),
-    });
-  };
+  const {
+    name,
+    username,
+    email,
+    password,
+    handleInputChange,
+    handleRegisterUser
+  } = useContext(AuthContext)
 
   return (
     <ThemeProvider theme={theme}>
@@ -41,7 +43,7 @@ const RegisterForm = () => {
           <Typography component="h1" variant="h5">
             Sign up
           </Typography>
-          <Box component="form" noValidate onSubmit={handleSubmit} sx={{ mt: 3 }}>
+          <Box component="form" noValidate onSubmit={handleRegisterUser} sx={{ mt: 3 }}>
             <Grid container spacing={2}>
               <Grid item xs={12} sm={6}>
                 <TextField
@@ -52,6 +54,8 @@ const RegisterForm = () => {
                   id="name"
                   label="Name"
                   autoFocus
+                  value={name}
+                  onChange={handleInputChange}
                 />
               </Grid>
               <Grid item xs={12} sm={6}>
@@ -62,6 +66,8 @@ const RegisterForm = () => {
                   label="Username"
                   name="username"
                   autoComplete="username"
+                  value={username}
+                  onChange={handleInputChange}
                 />
               </Grid>
               <Grid item xs={12}>
@@ -72,6 +78,8 @@ const RegisterForm = () => {
                   label="Email Address"
                   name="email"
                   autoComplete="email"
+                  value={email}
+                  onChange={handleInputChange}
                 />
               </Grid>
               <Grid item xs={12}>
@@ -83,6 +91,8 @@ const RegisterForm = () => {
                   type="password"
                   id="password"
                   autoComplete="new-password"
+                  value={password}
+                  onChange={handleInputChange}
                 />
               </Grid>
               <Grid item xs={12}>

@@ -8,19 +8,19 @@ import PersonOutlineIcon from '@mui/icons-material/PersonOutlined';
 import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
+import UserAPI from '../../utils/UserAPI'
+import AuthContext from '../../utils/AuthContext'
+import { useState, useContext } from 'react'
 
 const theme = createTheme();
 
 const LoginForm = () => {
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    const data = new FormData(event.currentTarget);
-    // eslint-disable-next-line no-console
-    console.log({
-      username: data.get('username'),
-      password: data.get('password'),
-    });
-  };
+  const {
+    lUsername,
+    lPassword,
+    handleInputChange,
+    handleLoginUser
+  } = useContext(AuthContext)
 
   return (
     <ThemeProvider theme={theme}>
@@ -40,26 +40,30 @@ const LoginForm = () => {
           <Typography component="h1" variant="h5">
             Sign in
           </Typography>
-          <Box component="form" onSubmit={handleSubmit} noValidate sx={{ mt: 1 }}>
+          <Box component="form" onSubmit={handleLoginUser} noValidate sx={{ mt: 1 }}>
             <TextField
-              margin="normal"
               required
               fullWidth
-              id="username"
-              label="Username"
-              name="username"
-              autoComplete="username"
               autoFocus
+              margin="normal"
+              name="lUsername"
+              label="Username"
+              id="lUsername"
+              value={lUsername}
+              autoComplete="lUsername"
+              onChange={handleInputChange}
             />
             <TextField
-              margin="normal"
               required
               fullWidth
-              name="password"
-              label="Password"
+              margin="normal"
               type="password"
-              id="password"
+              name="lPassword"
+              label="Password"
+              id="lPassword"
               autoComplete="current-password"
+              value={lPassword}
+              onChange={handleInputChange}
             />
             <Button
               type="submit"
