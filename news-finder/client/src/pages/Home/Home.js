@@ -1,12 +1,10 @@
-import MediaCard from "../../components/Card/Card"
-import CategoryButtons from "../../components/CategoryButtons"
 import SelectBox from "../../components/SelectBox"
+import SearchField from "../../components/SearchField"
 
 const Home = () => {
   return (
     <>
-      <CategoryButtons />
-      <MediaCard />
+      <SearchField />
       <SelectBox />
     </>
   )

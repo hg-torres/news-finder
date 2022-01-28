@@ -9,14 +9,14 @@ export default function SelectBox() {
       <Autocomplete
         multiple
         id="tags-standard"
-        options={newSelection}
+        options={countrySelection}
         getOptionLabel={(option) => option.country}
-        defaultValue={[newSelection[1]]}
+        defaultValue={[countrySelection[70]]}
         renderInput={(params) => (
           <TextField
             {...params}
             variant="standard"
-            label="Country"
+            label="country"
             placeholder="Country"
           />
         )}
@@ -24,9 +24,9 @@ export default function SelectBox() {
       <Autocomplete
         multiple
         id="tags-outlined"
-        options={newSelection}
+        options={categorySelection}
         getOptionLabel={(option) => option.category}
-        defaultValue={[newSelection[1]]}
+        defaultValue={[categorySelection[1]]}
         filterSelectedOptions
         renderInput={(params) => (
           <TextField
@@ -39,9 +39,9 @@ export default function SelectBox() {
        <Autocomplete
         multiple
         id="tags-outlined"
-        options={newSelection}
+        options={languageSelection}
         getOptionLabel={(option) => option.language}
-        defaultValue={[newSelection[1]]}
+        defaultValue={[languageSelection[7]]}
         filterSelectedOptions
         renderInput={(params) => (
           <TextField
@@ -56,7 +56,7 @@ export default function SelectBox() {
 }
 
 // newsdata Categories
-const newSelection = [
+const categorySelection = [
     {category: "business"},
     {category: "entertainment"},
     {category: "health"},
@@ -66,6 +66,9 @@ const newSelection = [
     {category: "technology"},
     {category: "top"},
     {category: "world"},
+]
+
+const countrySelection = [
     {country: "Argentina"},
     {country: "Australia"},
     {country: "Austria"},
@@ -138,6 +141,9 @@ const newSelection = [
     {country: "United kingdom"},
     {country: "United states of america"},
     {country: "Venezuela"},
+]
+
+const languageSelection = [
     {language: "Arabic"},
     {language: "Bosnian"},
     {language: "Bulgarian"},
