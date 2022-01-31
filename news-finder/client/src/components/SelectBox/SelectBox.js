@@ -21,17 +21,17 @@ export default function SelectBox({ searchText }) {
     //         searchText(text)
     // }
     //     const fetchNews = async () => {
-    try {
-      const res = await fetch(
-        `https://newsdata.io/api/1/news?apikey=pub_4031193b8e4e6a29a91c4ed164279d46890f&q=${searchState}&country=${countryState}&language=${languageState}&category=${categoryState}`
-      )
-      const news = await res.json()
-      console.log(news)
-      setNews(news.results)
-      setIsLoading(false)
-    } catch (error) {
-      console.log(error);
-    }
+  //   try {
+  //     const res = await fetch(
+  //       `https://newsdata.io/api/1/news?apikey=pub_4031193b8e4e6a29a91c4ed164279d46890f&q=${searchState}&country=${countryState}&language=${languageState}&category=${categoryState}`
+  //     )
+  //     const news = await res.json()
+  //     console.log(news)
+  //     setNews(news.results)
+  //     setIsLoading(false)
+  //   } catch (error) {
+  //     console.log(error);
+  //   }
   }
 
   useEffect(() => {
@@ -43,21 +43,22 @@ export default function SelectBox({ searchText }) {
   return (
     <Stack spacing={3} sx={{ width: 500 }}>
       <Box
+      component="form"
+      onSubmit={handleSearch}
         sx={{
           width: 500,
           maxWidth: '100%',
         }}
+      
       >
         <TextField onChange={(e) => setSearchState(e.target.value)} fullWidth label="keyword" id="keyword" />
-        <button onClick={handleSearch} type="submit">Search</button>
-      </Box>
-      );
-      <Autocomplete
+        <Autocomplete
         multiple
         id="tags-standard"
         options={countrySelection}
         getOptionLabel={(option) => option.country}
         defaultValue={[countrySelection[70]]}
+        onChange={(e) => setCountryState(e.target.value)}
         renderInput={(params) => (
           <TextField
             {...params}
@@ -75,6 +76,7 @@ export default function SelectBox({ searchText }) {
         options={categorySelection}
         getOptionLabel={(option) => option.category}
         defaultValue={[categorySelection[1]]}
+        onChange={(e) => setCategoryState(e.target.value)}
         filterSelectedOptions
         renderInput={(params) => (
           <TextField
@@ -92,6 +94,7 @@ export default function SelectBox({ searchText }) {
         options={languageSelection}
         getOptionLabel={(option) => option.language}
         defaultValue={[languageSelection[7]]}
+        onChange={(e) => setLanguageState(e.target.value)}
         filterSelectedOptions
         renderInput={(params) => (
           <TextField
@@ -103,11 +106,14 @@ export default function SelectBox({ searchText }) {
           />
         )}
       />
-      <section>
+       <button type="submit">Search</button>
+      </Box>
+    
+      {/* <section>
         {news.map((newsArticle) => {
           const { title, link, creator, description, pubDate, source_id, _id } = newsArticle
         })}
-      </section>
+      </section> */}
     </Stack>
   );
 
