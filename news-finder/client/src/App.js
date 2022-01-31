@@ -12,29 +12,6 @@ import SearchField from './components/SearchField'
 
 const App = () => {
 
-  const [news, setNews] = useState([])
-  const [categoryState, setCategoryState] = useState('')
-  const [countryState, setCountryState] = useState('')
-  const [languageState, setLanguageState] = useState('')
-  const [isLoading, setIsLoading] = useState(true)
-
-  useEffect(() => {
-    const fetchNews = async () => {
-      try {
-        const res = await fetch(
-          `https://newsdata.io/api/1/news?apikey=pub_4031193b8e4e6a29a91c4ed164279d46890f&country=${countryState}&language=${languageState}&category=${categoryState}`
-        )
-        const news = await res.json()
-        console.log(news)
-        setNews(news.results)
-        setIsLoading(false)
-      } catch (error) {
-        console.log(error);
-      }
-    }
-
-    fetchNews()
-  }, [])
 
   return (
     <Router>
@@ -42,12 +19,6 @@ const App = () => {
         <Route path='/login' element={<Auth />} />
         <Route path='/home' element={<Home />} />
       </Routes>
-      <SearchField searchText={(text) => setTerm(text)} />
-      {/* <section>
-        {news.map((news) => {
-          const {title, }
-        })}
-      </section> */}
     </Router>
   
   )
