@@ -73,7 +73,6 @@ export default function MenuAppBar() {
                 <MenuItem onClick={handleClose}>Login</MenuItem>
                 <MenuItem onClick={handleClose}>My feed</MenuItem>
                 <MenuItem onClick={handleClose}>Logout</MenuItem>
-                <MenuItem onClick={handleClose}>Logout</MenuItem>
               </Menu>
             </div>
           )}
