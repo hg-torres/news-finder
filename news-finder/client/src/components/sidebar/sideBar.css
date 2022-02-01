@@ -36,11 +36,12 @@
     margin: 10px;
     padding: 5px;
     width: 80%;
-    border-top: 3px solid #daceb9; 
-    border-bottom: 3px solid #daceb9; 
+    border-top: 3px solid #949494; 
+    border-bottom: 3px solid #949494; 
     align-items: center;
     display: flex;
     flex-direction: column;
+
 }
 
 .sidebarInfo{

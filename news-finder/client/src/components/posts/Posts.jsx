@@ -1,8 +1,14 @@
+import Post from "../post/Post";
 import "./posts.css"
 
 function Posts() {
   return <div className="Posts">
-            posts
+            <Post />
+            <Post />
+            <Post />
+            <Post />
+            <Post />
+            <Post />
          </div>;
 }
 
