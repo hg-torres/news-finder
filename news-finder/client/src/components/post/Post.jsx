@@ -13,6 +13,7 @@ function Post() {
             <hr/>
             <span className="postDate">Post Date</span>
         </div>
+        <p className = "postDescription">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Recusandae reprehenderit quisquam aperiam culpa nesciunt deserunt eius odit libero ducimus voluptas sequi, ratione neque repellat omnis officia id, quos quis ipsum. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Recusandae reprehenderit quisquam aperiam culpa nesciunt deserunt eius odit libero ducimus voluptas sequi, ratione neque repellat omnis officia id, quos quis ipsum. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Recusandae reprehenderit quisquam aperiam culpa nesciunt deserunt eius odit libero ducimus voluptas sequi, ratione neque repellat omnis officia id, quos quis ipsum.</p>
     </div>
 
   );

@@ -15,6 +15,7 @@ html,body{
     align-items: center;
     font-family: 'Dongle', sans-serif;
     font-size: 20px;
+    z-index: 999;
 }
 
 .topLeft,.topRight{

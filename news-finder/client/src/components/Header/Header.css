@@ -1,5 +1,6 @@
 .header{
-    margin-top: 60px;
+    /* margin-top: 60px; */
+    /* z-index: 999; */
 }
 
 .headerTitles{
@@ -8,6 +9,7 @@
     align-items: center;
     font-family: 'Mukta', sans-serif;
     color: rgb(71, 71, 71);
+    z-index: 0;
 }
 
 .headerTitlesSm{
@@ -18,13 +20,13 @@
 
 .headerTitlesLg{
     position: absolute;
-    top: 12%;
+    /* top: 12%; */
     font-size: 100px;
 }
 
 .headerImg{
     width: 100%;
-    height: 550px;
-    margin-top: 80px;
-    object-fit: cover;
+    height: 960px;
+    /* margin-top: 80px; */
+    object-fit: fill;
 }
