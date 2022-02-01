@@ -1,5 +1,4 @@
 import Appbar from './components/Appbar'
-import Header from './components/Header/Header';
 import Home from './pages/Home/Home';
 
 function App() {
@@ -7,7 +6,8 @@ function App() {
     <>
       <Appbar />
       <Home />
-      <Header />
+
+
     </>
     
   );
