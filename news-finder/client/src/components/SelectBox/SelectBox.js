@@ -1,5 +1,4 @@
 import * as React from 'react';
-import Autocomplete from '@mui/material/Autocomplete';
 import TextField from '@mui/material/TextField';
 import Stack from '@mui/material/Stack';
 import Box from '@mui/material/Box';
@@ -59,7 +58,7 @@ export default function SelectBox({ searchText }) {
         <TextField name="country" onChange={handleInputChange} fullWidth label="country" id="fullWidth" />
         <TextField name="category" onChange={handleInputChange} fullWidth label="category" id="fullWidth" />
         <TextField name="language" onChange={handleInputChange} fullWidth label="langauge" id="fullWidth" />
-        
+
         {/* <Autocomplete
         multiple
         name="country"
