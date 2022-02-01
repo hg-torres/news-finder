@@ -8,15 +8,19 @@ import { useState,useEffect } from 'react'
 export default function SelectBox({ searchText }) {
 
   const [news, setNews] = useState([])
-  const [searchState, setSearchState] = useState('')
+  const [searchState, setSearchState] = useState({search: '', category: '', country: '', language: ''})
   const [categoryState, setCategoryState] = useState('')
   const [countryState, setCountryState] = useState('')
   const [languageState, setLanguageState] = useState('')
   const [isLoading, setIsLoading] = useState(true)
 
+  const handleInputChange = ({ target: { name, value } }) => {
+    setSearchState({ ...searchState, [name]: value })
+  }
+
   const handleSearch = async (e) => {
     e.preventDefault()
-    console.log(searchState, countryState, categoryState, languageState, `https://newsdata.io/api/1/news?apikey=pub_4031193b8e4e6a29a91c4ed164279d46890f&q=${searchState}&country=${countryState}&language=${languageState}&category=${categoryState}`)
+    console.log(searchState, countryState, categoryState, languageState, `https://newsdata.io/api/1/news?apikey=pub_4031193b8e4e6a29a91c4ed164279d46890f&q=${searchState.search}&country=${countryState.country}&language=${languageState.language}&category=${categoryState.category}`)
 
     //         searchText(text)
     // }
@@ -51,22 +55,28 @@ export default function SelectBox({ searchText }) {
         }}
       
       >
-        <TextField onChange={(e) => setSearchState(e.target.value)} fullWidth label="keyword" id="keyword" />
-        <Autocomplete
+        <TextField name="search" onChange={handleInputChange} fullWidth label="search" id="keyword" />
+        <TextField name="country" onChange={handleInputChange} fullWidth label="country" id="fullWidth" />
+        <TextField name="category" onChange={handleInputChange} fullWidth label="category" id="fullWidth" />
+        <TextField name="language" onChange={handleInputChange} fullWidth label="langauge" id="fullWidth" />
+        
+        {/* <Autocomplete
         multiple
+        name="country"
         id="tags-standard"
         options={countrySelection}
         getOptionLabel={(option) => option.country}
         defaultValue={[countrySelection[70]]}
-        onChange={(e) => setCountryState(e.target.value)}
+        onChange={handleInputChange}
         renderInput={(params) => (
           <TextField
             {...params}
             variant="standard"
             label="country"
             placeholder="Country"
-            value={countryState}
-            onChange={(e) => setCountryState(e.target.value)}
+            name= "country"
+            // value={countryState}
+            onChange={handleInputChange}
           />
         )}
       />
@@ -105,7 +115,7 @@ export default function SelectBox({ searchText }) {
             onChange={(e) => setLanguageState(e.target.value)}
           />
         )}
-      />
+      /> */}
        <button type="submit">Search</button>
       </Box>
     
