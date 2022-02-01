@@ -1,0 +1,30 @@
+.header{
+    margin-top: 60px;
+}
+
+.headerTitles{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: 'Mukta', sans-serif;
+    color: rgb(71, 71, 71);
+}
+
+.headerTitlesSm{
+    position: absolute;
+    top: 10%;
+    font-size: 20px;
+}
+
+.headerTitlesLg{
+    position: absolute;
+    top: 12%;
+    font-size: 100px;
+}
+
+.headerImg{
+    width: 100%;
+    height: 550px;
+    margin-top: 80px;
+    object-fit: cover;
+}

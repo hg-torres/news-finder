@@ -1,0 +1,80 @@
+html,body{
+    margin: 0;
+    padding: 0;
+    background-color: rgb(203, 240, 238);
+}
+
+.top{
+    min-width: 100%;
+    height: 50px;
+    /* background-color: aquamarine; */
+    position: sticky;
+    top: 0;
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+    font-family: 'Dongle', sans-serif;
+    font-size: 20px;
+}
+
+.topLeft,.topRight{
+    flex:3;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.topIcon{
+    font-size: 30px;
+    margin-right: 10px;
+    color: rgb(46, 46, 46);
+    cursor: pointer;
+}
+
+
+.topImg{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+    object-fit: cover;
+}
+
+.topCenter{
+    flex: 6;
+}
+
+.topList{
+    display: flex;
+    justify-content: center;
+    margin:0;
+    padding: 0;
+    list-style: none;
+}
+
+.topListItem{
+    margin-right: 20px;
+    font-size: 40px;
+    font-weight: 300;
+    cursor: pointer;
+    font-family: 'Dongle', sans-serif;
+}
+
+.topSearch{
+    font-size: 18px;
+    color: rgb(95, 95, 95);
+    cursor: pointer;
+    margin-right: 60px;
+}
+
+.topRight{
+    cursor: pointer;
+    color: rgb(0, 107, 110);
+}
+
+.topLogout{
+    margin-left: 20px;;
+}
