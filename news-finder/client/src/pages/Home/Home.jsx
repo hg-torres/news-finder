@@ -1,20 +1,16 @@
-import posts from "../../components/posts/Posts";
-import sideBar from "../../components/sidebar/sideBar";
+import Posts from "../../components/posts/Posts";
+import Sidebar from "../../components/sidebar/sideBar";
 import "./Home.css"
 
-function Home() {
+
+export default function Homepage() {
   return (
     <>
-  <header />
-  <div className="home">
-  <posts />
-  <sideBar />
-
-  </div>
-  </>
-    );
-
-
+      <header />
+      <div className="home">
+        <Posts />
+        <Sidebar />
+      </div>
+    </>
+  );
 }
-
-export default Home;
