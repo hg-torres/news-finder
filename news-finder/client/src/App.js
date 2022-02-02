@@ -6,8 +6,8 @@ function App() {
   return (
     <>
       <Appbar />
-      {/* <Home /> */}
-      <Single />
+      <Home />
+      {/* <Single /> */}
 
 
     </>
