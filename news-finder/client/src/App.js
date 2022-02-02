@@ -3,22 +3,24 @@ import Home from './pages/Home/Home';
 import Single from './pages/Home/single/Single';
 import {
   BrowserRouter as Router,
-  Switch,
+  Routes,
   Route,
-  Link,
-  useRouteMatch,
+  Link
 } from "react-router-dom";
 import react from 'react';
+import LoginForm from './components/LoginForm/LoginForm';
 
 function App() {
   return (
     <Router>
       <Appbar />
         <Routes>
-
+          <Route path="/" element={<Home />} />
         </Routes>
-
-      <Home />
+        <Routes>
+          <Route path="/login" element={<LoginForm />} />
+        </Routes>
+      {/* <Home /> */}
       {/* <Single /> */}
 
 
