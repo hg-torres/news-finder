@@ -1,20 +1,19 @@
 import * as React from 'react';
 import ToggleButton from '@mui/material/ToggleButton';
 import ToggleButtonGroup from '@mui/material/ToggleButtonGroup';
-import {useState} from 'react'
 
-export default function ToggleButtonsMultiple() {
-  const [formats, setFormats] = useState('') 
-  const handleFormat = (event, newFormats) => {
-    setFormats(newFormats);
-  };
+export default function ToggleButtonsMultiple({onChange, category}) {
+
 
   return (
     <ToggleButtonGroup
-      value={formats}
-      onChange={handleFormat}
+      value={category}
+      onChange={onChange}
       aria-label="text formatting"
     >
+      <ToggleButton value="business">
+        Business
+      </ToggleButton>
       <ToggleButton value="entertainment">
         Entertainment
       </ToggleButton>
