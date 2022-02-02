@@ -2,15 +2,13 @@ import * as React from 'react';
 import TextField from '@mui/material/TextField';
 import Stack from '@mui/material/Stack';
 import Box from '@mui/material/Box';
-import { useState,useEffect } from 'react'
+import { useState, useEffect } from 'react'
 
 export default function SelectBox({ searchText }) {
 
   const [news, setNews] = useState([])
-  const [searchState, setSearchState] = useState({search: '', category: '', country: '', language: ''})
+  const [searchState, setSearchState] = useState({search: '', category: ''})
   const [categoryState, setCategoryState] = useState('')
-  const [countryState, setCountryState] = useState('')
-  const [languageState, setLanguageState] = useState('')
   const [isLoading, setIsLoading] = useState(true)
 
   const handleInputChange = ({ target: { name, value } }) => {
@@ -19,14 +17,14 @@ export default function SelectBox({ searchText }) {
 
   const handleSearch = async (e) => {
     e.preventDefault()
-    console.log(searchState, countryState, categoryState, languageState, `https://newsdata.io/api/1/news?apikey=pub_4031193b8e4e6a29a91c4ed164279d46890f&q=${searchState.search}&country=${countryState.country}&language=${languageState.language}&category=${categoryState.category}`)
+    console.log(searchState, categoryState)
 
     //         searchText(text)
     // }
     //     const fetchNews = async () => {
   //   try {
   //     const res = await fetch(
-  //       `https://newsdata.io/api/1/news?apikey=pub_4031193b8e4e6a29a91c4ed164279d46890f&q=${searchState}&country=${countryState}&language=${languageState}&category=${categoryState}`
+  //       `https://newsdata.io/api/1/news?apikey=pub_4031193b8e4e6a29a91c4ed164279d46890f&q=${searchState}&country=us&language=en&category=${categoryState}`
   //     )
   //     const news = await res.json()
   //     console.log(news)
@@ -55,66 +53,7 @@ export default function SelectBox({ searchText }) {
       
       >
         <TextField name="search" onChange={handleInputChange} fullWidth label="search" id="keyword" />
-        <TextField name="country" onChange={handleInputChange} fullWidth label="country" id="fullWidth" />
-        <TextField name="category" onChange={handleInputChange} fullWidth label="category" id="fullWidth" />
-        <TextField name="language" onChange={handleInputChange} fullWidth label="langauge" id="fullWidth" />
-
-        {/* <Autocomplete
-        multiple
-        name="country"
-        id="tags-standard"
-        options={countrySelection}
-        getOptionLabel={(option) => option.country}
-        defaultValue={[countrySelection[70]]}
-        onChange={handleInputChange}
-        renderInput={(params) => (
-          <TextField
-            {...params}
-            variant="standard"
-            label="country"
-            placeholder="Country"
-            name= "country"
-            // value={countryState}
-            onChange={handleInputChange}
-          />
-        )}
-      />
-      <Autocomplete
-        multiple
-        id="tags-outlined"
-        options={categorySelection}
-        getOptionLabel={(option) => option.category}
-        defaultValue={[categorySelection[1]]}
-        onChange={(e) => setCategoryState(e.target.value)}
-        filterSelectedOptions
-        renderInput={(params) => (
-          <TextField
-            {...params}
-            label="categories"
-            placeholder="Categories"
-            value={categoryState}
-            onChange={(e) => setCategoryState(e.target.value)}
-          />
-        )}
-      />
-      <Autocomplete
-        multiple
-        id="tags-outlined"
-        options={languageSelection}
-        getOptionLabel={(option) => option.language}
-        defaultValue={[languageSelection[7]]}
-        onChange={(e) => setLanguageState(e.target.value)}
-        filterSelectedOptions
-        renderInput={(params) => (
-          <TextField
-            {...params}
-            label="language"
-            placeholder="Language"
-            value={languageState}
-            onChange={(e) => setLanguageState(e.target.value)}
-          />
-        )}
-      /> */}
+ 
        <button type="submit">Search</button>
       </Box>
     

@@ -1,11 +1,13 @@
 import SelectBox from "../../components/SelectBox/SelectBox"
-import VirtualizedList from "../../components/List/List"
+import ToggleButton from "../../components/ToggleButton/ToggleButton"
+
 
 const Home = () => {
   return (
     <>
+     <ToggleButton />
       <SelectBox />
-      <VirtualizedList />
+
     </>
   )
 }
