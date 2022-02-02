@@ -8,6 +8,7 @@ function Post() {
             <div className="postCats">
                 <span className="postCat">Music</span>
                 <span className="postCat">Life</span>
+                <i class="postHeart far fa-heart"></i>
             </div>
             <span className="postTitle">Test Title</span>
             <hr/>
