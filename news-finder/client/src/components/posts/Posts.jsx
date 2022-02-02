@@ -1,4 +1,5 @@
 import Post from "../post/Post";
+import SidebarStocks from "../sideBarStocks/sideBarStocks";
 import "./posts.css"
 
 function Posts() {

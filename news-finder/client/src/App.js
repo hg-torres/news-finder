@@ -9,6 +9,7 @@ import {
 } from "react-router-dom";
 import react from 'react';
 import LoginForm from './components/LoginForm/LoginForm';
+import RegisterForm from './components/RegisterForm/RegisterForm';
 
 function App() {
   return (
@@ -19,6 +20,9 @@ function App() {
         </Routes>
         <Routes>
           <Route path="/login" element={<LoginForm />} />
+        </Routes>
+        <Routes>
+          <Route path="/register" element={<RegisterForm />} />
         </Routes>
       {/* <Home /> */}
       {/* <Single /> */}
