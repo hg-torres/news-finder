@@ -13,7 +13,7 @@ function SinglePost() {
                         <span className="singlePostAuthor">Author: <b>AUTHOR NAME</b></span>
                         <span className="singlePostDate">Date: <b>Post Date</b></span>
                     </div>
-                    <p className="singlePostWriting">Article writing stuff</p>
+                    <p className="singlePostWriting">Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur ipsa quasi dolore dignissimos quisquam quos adipisci. Omnis ab, deserunt atque dicta nulla reprehenderit laborum soluta error architecto dolorum? Molestiae, modi!</p>
                 </div>
         </div>;
 }

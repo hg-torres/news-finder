@@ -25,7 +25,7 @@
     -moz-border-radius: 5px;
     -ms-border-radius: 5px;
     -o-border-radius: 5px;
-    object-fit: cover;
+    object-fit: fill;
 }
 
 .singlePostTitle{
@@ -45,4 +45,17 @@
     font-family: 'Dongle', sans-serif;
     font-size: 30px;
     margin: 10px;
+    padding: 30px;
+    color: rgb(85, 85, 85);
+}
+
+.singlePostWriting::first-letter{
+    font-family: 'Dongle', sans-serif;
+    font-size: 50px;
+    color: rgb(85, 85, 85);
+    font-weight: 600;
+}
+
+.singlePostAuthor{
+    padding-right: 20px;
 }
