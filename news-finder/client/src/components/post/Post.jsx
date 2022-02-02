@@ -3,7 +3,7 @@ import "./post.css"
 function Post() {
   return (
     <div className="post">
-        <img className="postImg" src="https://media-cldnry.s-nbcnews.com/image/upload/t_fit-560w,f_auto,q_auto:best/rockcms/2022-02/220201-un-russia-us-mb-0923-319473.jpg" alt="" srcset="" />
+        <img className="postImg" src="https://static01.nyt.com/images/2021/10/21/well/SWIMMING-PHOTOS17/merlin_196438650_e704a1d1-50d6-4b48-9513-9a31f91a83c4-superJumbo.jpg?quality=75&auto=webp" alt="" srcset="" />
         <div className="postInfo">
             <div className="postCats">
                 <span className="postCat">Music</span>
