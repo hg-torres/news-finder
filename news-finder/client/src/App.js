@@ -14,9 +14,9 @@ function App() {
   return (
     <Router>
       <Appbar />
-        <Switch>
+        <Routes>
 
-        </Switch>
+        </Routes>
 
       <Home />
       {/* <Single /> */}
