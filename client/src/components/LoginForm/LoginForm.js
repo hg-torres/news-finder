@@ -8,10 +8,17 @@ import PersonOutlineIcon from '@mui/icons-material/PersonOutlined';
 import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
+<<<<<<< HEAD
+=======
+import UserAPI from '../../utils/UserAPI'
+import AuthContext from '../../utils/AuthContext'
+import { useState, useContext } from 'react'
+>>>>>>> 0d7e3eba8a94ad3ad6e8934e453eb1242c234c04
 
 const theme = createTheme();
 
 const LoginForm = () => {
+<<<<<<< HEAD
   const handleSubmit = (event) => {
     event.preventDefault();
     const data = new FormData(event.currentTarget);
@@ -21,6 +28,14 @@ const LoginForm = () => {
       password: data.get('password'),
     });
   };
+=======
+  const {
+    lUsername,
+    lPassword,
+    handleInputChange,
+    handleLoginUser
+  } = useContext(AuthContext)
+>>>>>>> 0d7e3eba8a94ad3ad6e8934e453eb1242c234c04
 
   return (
     <ThemeProvider theme={theme}>
@@ -40,6 +55,7 @@ const LoginForm = () => {
           <Typography component="h1" variant="h5">
             Sign in
           </Typography>
+<<<<<<< HEAD
           <Box component="form" onSubmit={handleSubmit} noValidate sx={{ mt: 1 }}>
             <TextField
               margin="normal"
@@ -60,6 +76,32 @@ const LoginForm = () => {
               type="password"
               id="password"
               autoComplete="current-password"
+=======
+          <Box component="form" onSubmit={handleLoginUser} noValidate sx={{ mt: 1 }}>
+            <TextField
+              required
+              fullWidth
+              autoFocus
+              margin="normal"
+              name="lUsername"
+              label="Username"
+              id="lUsername"
+              value={lUsername}
+              autoComplete="lUsername"
+              onChange={handleInputChange}
+            />
+            <TextField
+              required
+              fullWidth
+              margin="normal"
+              type="password"
+              name="lPassword"
+              label="Password"
+              id="lPassword"
+              autoComplete="current-password"
+              value={lPassword}
+              onChange={handleInputChange}
+>>>>>>> 0d7e3eba8a94ad3ad6e8934e453eb1242c234c04
             />
             <Button
               type="submit"

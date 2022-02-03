@@ -1,3 +1,0 @@
-# news-finder
-
-bradley test
