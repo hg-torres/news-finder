@@ -118,6 +118,8 @@ const Home = () => {
         source={article.source_id}
         link={article.link}
         
+        article={article}
+
         ></MediaCard>
          
     </Grid>

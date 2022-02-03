@@ -10,27 +10,25 @@ import DefaultPic from '../../components/Header/default_pic.png'
 import Example from "../../assets/testproject3.jpg"
 import axios from 'axios';
 
-const MediaCard = ({title, creator, description, pubDate, image_url, source_id, link, article}) => {
+const ProfileCard = ({title, creator, description, pubDate, image_url, source_id, link, article, id}) => {
   console.log(image_url)
 
-  const saveArticle = ()=> {
-    let newArticle = {
-     title: title,
-    description,
-    date: pubDate,
-    image: image_url,
-    }
+  const deleteArticle = ()=> {
 
-axios.post('/api/news', newArticle, {
-  headers: {
-    'Authorization': `Bearer ${localStorage.getItem('user')}`
-  }
-})
-.then(res => {
-  console.log(res.data)
-})
 
-  }
+    axios.delete(`/api/news/${id}`, {
+        headers: {
+          'Authorization': `Bearer ${localStorage.getItem('user')}`
+        }
+      })
+      .then(res => {
+        console.log(res.data)
+        window.location.reload()
+      })
+}
+
+
+  
   return (
     <Card sx={{ maxWidth: 345, m: 1 }}>
       { 
@@ -65,11 +63,11 @@ axios.post('/api/news', newArticle, {
         </Typography>
       </CardContent>
       <CardActions>
-        <Button onClick={saveArticle} className="save" variant="contained" size="small"> Save</Button>
+        <Button onClick={() => deleteArticle(id)} className="delete" variant="contained" size="small"> Delete</Button>
         <Button size="small">{link}</Button>
       </CardActions>
     </Card>
   );
 }
 
-export default MediaCard
+export default ProfileCard

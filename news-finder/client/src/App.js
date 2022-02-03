@@ -5,6 +5,7 @@ import {
 } from 'react-router-dom'
 import Auth from './pages/Auth'
 import Home from './pages/Home/'
+import Profile from './pages/Profile/'
 
 const App = () => {
 
@@ -14,6 +15,7 @@ const App = () => {
       <Routes>
         <Route path='/login' element={<Auth />}/>
         <Route path='/' element={<Home />} />
+        <Route path='/profile' element={<Profile />} />
       </Routes>
     </Router>
   

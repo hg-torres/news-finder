@@ -1,4 +1,6 @@
+import Appbar from "../../../components/Appbar"
 import RegisterForm from "../../../components/RegisterForm"
+
 
 const Auth = () => {
   return (

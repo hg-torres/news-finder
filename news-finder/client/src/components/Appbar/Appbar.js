@@ -9,6 +9,20 @@ import MenuIcon from '@mui/icons-material/Menu';
 import Link from '@mui/material/Link'
 
 export default function ButtonAppBar() {
+
+  const goToLogin = () => {
+    window.location = "/login"
+  }
+
+  const goToHome = () => {
+    window.location = "/"
+  }
+
+  const goToProfile = () => {
+    window.location = "/profile"
+  }
+
+
   return (
     <Box sx={{ flexGrow: 1 }}>
       <AppBar position="static">
@@ -25,9 +39,9 @@ export default function ButtonAppBar() {
           <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
             News Finder
           </Typography>
-          <Button color="inherit">Login</Button>
-          <Button color="inherit">Home</Button>
-          <Button color="inherit">Profile</Button>
+          <Button onClick={goToLogin} color="inherit"> Login</Button>
+          <Button onClick={goToHome} color="inherit">Home</Button>
+          <Button onClick={goToProfile} color="inherit">Profile</Button>
         </Toolbar>
       </AppBar>
     </Box>
