@@ -1,0 +1,63 @@
+.singlePost{
+    flex: 9;
+}
+
+.singlePostLike{
+    font-size: 25px;
+    cursor: pointer;
+    float: right;
+}
+
+.singlePostLike:hover{
+    color: rgb(255, 0, 0);
+}
+
+.singlePostWrapper{
+    padding: 20px;
+    padding-right: 0;
+}
+
+.singlePostImg{
+    width: 100%;
+    height: 200px;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+    object-fit: fill;
+}
+
+.singlePostTitle{
+    text-align: center;
+    margin: 10px;
+    font-family: 'Mukta', sans-serif;
+
+}
+
+.singlePostInfo{
+    text-align: center;
+    margin: 10px;
+    font-family: 'Mukta', sans-serif;
+}
+
+.singlePostWriting{
+    font-family: 'Dongle', sans-serif;
+    font-size: 30px;
+    margin: 10px;
+    padding: 30px;
+    color: rgb(85, 85, 85);
+}
+
+.singlePostWriting::first-letter{
+    font-family: 'Dongle', sans-serif;
+    font-size: 50px;
+    color: rgb(85, 85, 85);
+    font-weight: 600;
+}
+
+.singlePostAuthor{
+    padding-right: 20px;
+    
+}
+
