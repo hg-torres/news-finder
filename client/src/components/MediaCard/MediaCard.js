@@ -5,10 +5,9 @@ import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
-import Grid from '@mui/material/Grid'
 import DefaultPic from '../../components/Header/default_pic.png'
-import Example from "../../assets/testproject3.jpg"
 import axios from 'axios';
+import { Box } from '@mui/system';
 
 const MediaCard = ({title, creator, description, pubDate, image_url, source_id, link, article}) => {
   console.log(image_url)
@@ -29,6 +28,7 @@ axios.post('/api/news', newArticle, {
 .then(res => {
   console.log(res.data)
 })
+  .catch(err => window.location = "/login")
 
   }
   return (
@@ -54,19 +54,21 @@ axios.post('/api/news', newArticle, {
         <Typography style={{ fontWeight: 1000}} variant="body2" color="text.secondary">
         {creator}
         </Typography>
+        <Typography style={{ fontWeight: 1000}} variant="body2" color="text.secondary">
+          {pubDate}
+        </Typography>
+        <Box sx={{mt: 2}}>
         <Typography variant="body2" color="text.secondary">
         {description}
         </Typography>
-        <Typography style={{ fontWeight: 1000}} variant="body2" color="text.secondary">
-        {pubDate}
-        </Typography>
+        </Box>
         <Typography variant="body2" color="text.secondary">
         {source_id}
         </Typography>
       </CardContent>
       <CardActions>
         <Button onClick={saveArticle} className="save" variant="contained" size="small"> Save</Button>
-        <Button size="small">{link}</Button>
+        <Button size="small" href={link} target="_blank">Read</Button>
       </CardActions>
     </Card>
   );

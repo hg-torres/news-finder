@@ -22,9 +22,11 @@ router.get('/users', passport.authenticate('jwt'), (req, res) => {
   res.json(req.user)
 })
 
-router.put('/users', passport.authenticate('jwt'), async function (req, res) {
+
+router.put('/users/:id', async function (req, res) {
   await User.findByIdAndUpdate(req.params.id, req.body)
   res.sendStatus(200)
 })
+
 
 module.exports = router

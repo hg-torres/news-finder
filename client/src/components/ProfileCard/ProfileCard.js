@@ -11,7 +11,7 @@ import Example from "../../assets/testproject3.jpg"
 import axios from 'axios';
 
 const ProfileCard = ({title, creator, description, pubDate, image_url, source_id, link, article, id}) => {
-  console.log(image_url)
+  //console.log(image_url)
 
   const deleteArticle = ()=> {
 

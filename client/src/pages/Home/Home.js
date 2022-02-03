@@ -36,7 +36,10 @@ const Home = () => {
     articles: []
   })
 
-
+  let profile = {
+    username: 'Profile'
+  }
+  
   let url = `https://newsdata.io/api/1/news?apikey=pub_4031193b8e4e6a29a91c4ed164279d46890f&country=us&language=en`
 
   const handleRequest = event => {
@@ -69,7 +72,7 @@ const Home = () => {
 
   return (
     <>
-    <Appbar></Appbar>
+    <Appbar articleState={profile}></Appbar>
     <Grid container>
       <Grid item xs={12} sm={12} md={10} >
       <Box
@@ -101,7 +104,7 @@ const Home = () => {
       </Stack>
       </Grid>
       </Grid>
-        <Grid container
+      <Grid container
         > 
 
 
@@ -126,7 +129,7 @@ const Home = () => {
 
 
       )}
-      </Grid>
+    </Grid>
     </>
   )
 }

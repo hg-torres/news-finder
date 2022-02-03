@@ -7,8 +7,10 @@ import Button from '@mui/material/Button';
 import IconButton from '@mui/material/IconButton';
 import MenuIcon from '@mui/icons-material/Menu';
 import Link from '@mui/material/Link'
+import {useState, useEffect} from 'react'
+import axios from 'axios'
 
-export default function ButtonAppBar() {
+export default function ButtonAppBar({ articleState }) {
 
   const goToLogin = () => {
     window.location = "/login"
@@ -41,7 +43,7 @@ export default function ButtonAppBar() {
           </Typography>
           <Button onClick={goToLogin} color="inherit"> Login</Button>
           <Button onClick={goToHome} color="inherit">Home</Button>
-          <Button onClick={goToProfile} color="inherit">Profile</Button>
+          <Button onClick={goToProfile} color="inherit">{articleState.username}</Button>
         </Toolbar>
       </AppBar>
     </Box>
