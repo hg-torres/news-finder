@@ -7,6 +7,7 @@ import Button from '@mui/material/Button';
 import IconButton from '@mui/material/IconButton';
 import MenuIcon from '@mui/icons-material/Menu';
 import Link from '@mui/material/Link'
+// import {useNavigate} from 'react-router-dom'
 
 export default function ButtonAppBar() {
 
@@ -22,6 +23,14 @@ export default function ButtonAppBar() {
     window.location = "/profile"
   }
 
+//   let user = JSON.parse(localStorage.getItem('user'))
+//   console.log(user)
+//   const navigate= useNavigate();
+//   function logout()
+// {
+//   localStorage.clear();
+//   navigate.push('/')
+// }
 
   return (
     <Box sx={{ flexGrow: 1 }}>
@@ -42,6 +51,7 @@ export default function ButtonAppBar() {
           <Button onClick={goToLogin} color="inherit"> Login</Button>
           <Button onClick={goToHome} color="inherit">Home</Button>
           <Button onClick={goToProfile} color="inherit">Profile</Button>
+          {/* <Button onClick={logout}>Logout</Button> */}
         </Toolbar>
       </AppBar>
     </Box>

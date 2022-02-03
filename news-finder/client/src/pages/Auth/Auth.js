@@ -50,7 +50,7 @@ const Auth = () => {
       .then(token => {
         localStorage.setItem('user', token)
         setAuthState({ ...authState, lUsername: '', lPassword: '' })
-        window.location = '/'
+        window.location = '/home'
       })
   } 
 
