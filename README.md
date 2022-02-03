@@ -3,7 +3,7 @@
 # News-Finder
 
 # Description
-News Finder is an app that allows users to generate newsfeeds based on their topic of interest. Users can select from a list of topic that is provided in the navbar or search for news using keywords. Users are able to access saved newfeed through their profile and delete them once they are finished reading.
+News-Finder is an app that allows users to generate newsfeeds based on their topic of interest. Users can select from a list of topic that is provided in the navbar or search for news using keywords. Users are able to access saved newfeed through their profile and delete them once they are finished reading.
 
 Deployed Link: <a href="">Heroku</a><br>
 
