@@ -5,6 +5,10 @@ import Button from '@mui/material/Button'
 import Stack from '@mui/material/Stack'
 import Box from '@mui/material/Box'
 import axios from 'axios'
+import Grid from '@mui/material/Grid'
+import MediaCard from "../../components/MediaCard";
+import Container from '@mui/material/Container'
+import Appbar from '../../components/Appbar'
 
 
 
@@ -28,8 +32,8 @@ const Home = () => {
     console.log()
   }
 
-  const [articles, setArticles] = useState({
-    article: {}
+  const [articleState, setArticleState] = useState({
+    articles: []
   })
 
 
@@ -50,21 +54,24 @@ const Home = () => {
 
 
     axios.get(url)
-      .then(({ data: article }) => {
-
-        setArticles({ ...articles, article })
+      .then(({ data: articles }) => {
+        console.log(articles)
+        setArticleState({ ...articleState, articles: articles.results })
       })
       .catch(err => console.error(err))
   }
 
   useEffect(() => {
-    console.log(articles, url)
-  }, [articles])
+    console.log(articleState, url)
+  }, [])
 
   
 
   return (
     <>
+    <Appbar></Appbar>
+    <Grid container>
+      <Grid item xs={12} sm={12} md={10} >
       <Box
         sx={{
           display: 'flex',
@@ -75,6 +82,7 @@ const Home = () => {
       >
         <ToggleButton onChange={handleFormat} category={category} />
       </Box>
+      
       <Stack
         direction="row"
         spacing={2}
@@ -91,12 +99,32 @@ const Home = () => {
         <Button variant="contained" onClick={handleRequest}> Search</Button>
         </Box>
       </Stack>
-      {articles.results.map((article) => {
-        const {title, creator, description, pub_date, image_url, source_id, link} = article
-        <>
-        
+      </Grid>
+      </Grid>
+        <Grid container
+        > 
 
-      })}
+
+      {articleState.articles.map( article => 
+
+        <Grid item xs={12} sm={12} md={3}>
+
+        <MediaCard 
+        title={article.title}
+        creator={article.creator}
+        description={article.description}
+        pubDate={article.pubDate}
+        image_url={article.image_url}
+        source={article.source_id}
+        link={article.link}
+        
+        ></MediaCard>
+         
+    </Grid>
+
+
+      )}
+      </Grid>
     </>
   )
 }
