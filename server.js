@@ -33,7 +33,5 @@ app.use(require('./routes'))
 app.get('*', (req, res) => res.sendFile(join(__dirname, 'client', 'build', 'index.html')))
 
 require('./db')
-  .then(() => app.listen(process.env.PORT || 3000, function () {
-    console.log("Express server listening on port %d in %s mode", this.address().port, app.settings.env);
-  })
+  .then(() => app.listen(process.env.PORT || 3000)
   .catch(err => console.log(err))
