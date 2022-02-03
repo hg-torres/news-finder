@@ -22,7 +22,7 @@
   "bugs": {
     "url": "https://github.com/hg-torres/issues"
   },
-  "homepage": "https://github.com/hg-torres/news-finder#readme",
+  "homepage": "https://react-news-finder.herokuapp.com/",
   "dependencies": {
     "concurrently": "^7.0.0",
     "dotenv": "^14.2.0",
