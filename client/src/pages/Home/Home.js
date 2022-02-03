@@ -108,11 +108,11 @@ const Home = () => {
         > 
 
 
-      {articleState.articles.map( article => 
+      {articleState.articles.map( (article, i) => 
 
-        <Grid item xs={12} sm={12} md={3}>
+        <Grid item xs={12} sm={12} md={3} key={i}>
 
-        <MediaCard 
+        <MediaCard
         title={article.title}
         creator={article.creator}
         description={article.description}
@@ -125,7 +125,7 @@ const Home = () => {
 
         ></MediaCard>
          
-    </Grid>
+        </Grid>
 
 
       )}

@@ -56,9 +56,9 @@ const Profile = () => {
       <TextField name="username" label="change username" onChange={handleInputChange}></TextField>
       </Box>
       <Grid container>
-        {articleState.articles.map(article =>
+        {articleState.articles.map((article, i) =>
 
-        <Grid item xs={12} sm={12} md={3}>
+        <Grid item xs={12} sm={12} md={3} key={i}>
 
           <ProfileCard
             id={article._id}
