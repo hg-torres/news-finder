@@ -11,11 +11,11 @@ import Link from '@mui/material/Link'
 export default function ButtonAppBar() {
 
   const goToLogin = () => {
-    window.location = "/login"
+    window.location = "/"
   }
 
   const goToHome = () => {
-    window.location = "/"
+    window.location = "/home"
   }
 
   const goToProfile = () => {

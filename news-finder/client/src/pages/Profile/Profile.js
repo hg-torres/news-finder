@@ -30,17 +30,17 @@ axios.get('/api/users', {
 
     const handleInputChange = ({ target: { name, value } }) => {
         setArticleState({ ...articleState, [name]: value })
-        let newUsername= {
-            username: articleState.username
-        }
-        axios.put('/api/users', newUsername, {
-            headers: {
-              'Authorization': `Bearer ${localStorage.getItem('user')}`
-            }
-          }
-    ) .then(res => {
-        console.log(res)
-    })
+    //     let newUsername= {
+    //         username: articleState.username
+    //     }
+    //     axios.put('/api/users', newUsername, {
+    //         headers: {
+    //           'Authorization': `Bearer ${localStorage.getItem('user')}`
+    //         }
+    //       }
+    // ) .then(res => {
+    //     console.log(res)
+    // })
       }
 
 
@@ -48,7 +48,9 @@ return (
     <>
 <Appbar></Appbar>
 
-<TextField name="username" defaultValue={articleState.username} onChange={handleInputChange}>{articleState.username}</TextField>
+<TextField sx={{m:1}} defaultValue={articleState.username}>{articleState.username}</TextField>
+
+<Grid container>
 
 {articleState.articles.map( article => 
 
@@ -72,6 +74,7 @@ article={article}
 
 
 )}
+</Grid>
     </>
 )}
 

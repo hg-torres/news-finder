@@ -9,6 +9,7 @@ import Grid from '@mui/material/Grid'
 import MediaCard from "../../components/MediaCard";
 import Container from '@mui/material/Container'
 import Appbar from '../../components/Appbar'
+import "./Home.css"
 
 
 
