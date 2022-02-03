@@ -1,7 +1,7 @@
 import axios from 'axios'
 
 const UserAPI = {
-  register : async function (user) {
+  register: async function (user) {
     await axios.post('/api/users/register', user)
     return true
   },
